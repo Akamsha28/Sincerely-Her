@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>She Shines | A Chic Lifestyle Guide</title>
+    <title>Sincerely, Her | A Chic Lifestyle Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +35,12 @@
             line-height: 1.6;
             color: #374151;
         }
+        .prose ul {
+            list-style-position: inside;
+        }
+        .prose ol {
+            list-style-position: inside;
+        }
     </style>
 </head>
 <body>
@@ -42,19 +48,23 @@
     <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="#" class="text-4xl font-bold tracking-tighter text-black">She Shines</a>
+            <a href="#" id="home-link" class="text-4xl font-bold tracking-tighter text-black">Sincerely, Her</a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#style" class="nav-link">
+                <a href="#style" class="nav-link main-nav-link">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.47 2.118v-.09a2.25 2.25 0 0 1 2.47-2.118c1.073 0 2.062-.379 2.87-1.128a3.001 3.001 0 0 0 5.78 1.128v-.09a2.25 2.25 0 0 1-2.47 2.118c-1.073 0-2.062-.379-2.87-1.128Zm-7.53-4.28a3 3 0 0 0 5.78-1.128 2.25 2.25 0 0 1 2.47-2.118v.09a2.25 2.25 0 0 1-2.47 2.118c-1.073 0-2.062.379-2.87 1.128a3.001 3.001 0 0 0-5.78-1.128v.09a2.25 2.25 0 0 1 2.47-2.118c1.073 0 2.062.379 2.87 1.128Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c.249 0 .497-.009.741-.025M12 21a9.004 9.004 0 0 1-8.716-6.747M12 3c-4.816 0-8.716 3.9-8.716 8.747M12 3c4.816 0 8.716 3.9 8.716 8.747M12 3c.249 0 .497.009.741-.025M12 3a9.004 9.004 0 0 1 8.716 6.747"></path></svg>
                     Style
                 </a>
-                <a href="#wellness" class="nav-link">
+                <a href="#wellness" class="nav-link main-nav-link">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path></svg>
                     Wellness
                 </a>
-                <a href="#contact" class="nav-link">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path></svg>
-                    Suggestions
+                <a href="#period-care" class="nav-link main-nav-link">
+                   <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9"></path></svg>
+                    Period Care
+                </a>
+                <a href="#booking" class="nav-link main-nav-link">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.76 9.76 0 0 1-2.53-.388M21 12c0-4.556-4.03-8.25-9-8.25-4.418 0-8.165 3.13-8.862 7.25M12 21a8.25 8.25 0 0 1-8.25-8.25M12 21a8.25 8.25 0 0 0 8.25-8.25M3 7.5l3 3m0 0l3-3m-3 3v-6m-1.5-1.5H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"></path></svg>
+                    Book a Chat
                 </a>
             </div>
             <button id="mobile-menu-button" class="md:hidden flex items-center">
@@ -63,24 +73,15 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#style" class="block py-2 nav-link">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.47 2.118v-.09a2.25 2.25 0 0 1 2.47-2.118c1.073 0 2.062-.379 2.87-1.128a3.001 3.001 0 0 0 5.78 1.128v-.09a2.25 2.25 0 0 1-2.47 2.118c-1.073 0-2.062-.379-2.87-1.128Zm-7.53-4.28a3 3 0 0 0 5.78-1.128 2.25 2.25 0 0 1 2.47-2.118v.09a2.25 2.25 0 0 1-2.47 2.118c-1.073 0-2.062.379-2.87 1.128a3.001 3.001 0 0 0-5.78-1.128v.09a2.25 2.25 0 0 1 2.47-2.118c1.073 0 2.062.379 2.87 1.128Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c.249 0 .497-.009.741-.025M12 21a9.004 9.004 0 0 1-8.716-6.747M12 3c-4.816 0-8.716 3.9-8.716 8.747M12 3c4.816 0 8.716 3.9 8.716 8.747M12 3c.249 0 .497.009.741-.025M12 3a9.004 9.004 0 0 1 8.716 6.747"></path></svg>
-                Style
-            </a>
-            <a href="#wellness" class="block py-2 nav-link">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path></svg>
-                Wellness
-            </a>
-            <a href="#contact" class="block py-2 nav-link">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path></svg>
-                Suggestions
-            </a>
+            <a href="#style" class="block py-2 nav-link main-nav-link">Style</a>
+            <a href="#wellness" class="block py-2 nav-link main-nav-link">Wellness</a>
+            <a href="#period-care" class="block py-2 nav-link main-nav-link">Period Care</a>
+            <a href="#booking" class="block py-2 nav-link main-nav-link">Book a Chat</a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-
+    <!-- Main Content Wrapper -->
+    <div id="main-content">
         <!-- Hero Section -->
         <section class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
@@ -93,168 +94,181 @@
         </section>
 
         <div class="container mx-auto px-6 py-12">
-            <!-- Daily Outfit Ideas Section -->
+            <!-- Style Section -->
             <section id="style" class="mb-20 scroll-mt-20">
-                <h2 class="text-5xl font-bold mb-10 text-center">The Daily Edit: Style</h2>
+                 <h2 class="text-5xl font-bold mb-10 text-center">The Daily Edit: Style</h2>
                 <div class="grid md:grid-cols-3 gap-8 mb-16">
-                    <!-- Outfit 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                        <img src="https://res.cloudinary.com/dbco5pn5v/image/upload/v1752720664/Monochrome_e8evxv.png" alt="Woman in a chic monochrome outfit on a city street" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">City Monochrome</h3>
-                            <p class="text-gray-600 mb-4">Effortless sophistication with tailored trousers and a classic trench.</p>
-                        </div>
-                    </div>
-                    <!-- Outfit 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                        <img src="https://res.cloudinary.com/dbco5pn5v/image/upload/v1752722115/weekend_plan_erxeoq.png" alt="Weekend casual outfit" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Weekend Casual</h3>
-                            <p class="text-gray-600 mb-4">Elevated comfort featuring premium denim and a cashmere knit.</p>
-                        </div>
-                    </div>
-                    <!-- Outfit 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                        <img src="https://res.cloudinary.com/dbco5pn5v/image/upload/v1752722269/Office_satin_shirt_xkmfws.png" alt="Office power look" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Office Power</h3>
-                            <p class="text-gray-600 mb-4">A modern take on workwear with a structured blazer and silk blouse.</p>
-                        </div>
-                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://res.cloudinary.com/dbco5pn5v/image/upload/v1752720664/Monochrome_e8evxv.png" alt="Woman in a chic monochrome outfit on a city street" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"><div class="p-6"><h3 class="text-2xl font-bold mb-2">City Monochrome</h3><p class="text-gray-600">Effortless sophistication with tailored trousers and a classic trench.</p></div></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://res.cloudinary.com/dbco5pn5v/image/upload/v1752722115/weekend_plan_erxeoq.png" alt="Weekend casual outfit" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"><div class="p-6"><h3 class="text-2xl font-bold mb-2">Weekend Casual</h3><p class="text-gray-600">Elevated comfort featuring premium denim and a cashmere knit.</p></div></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://res.cloudinary.com/dbco5pn5v/image/upload/v1752722269/Office_satin_shirt_xkmfws.png" alt="Office power look" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"><div class="p-6"><h3 class="text-2xl font-bold mb-2">Office Power</h3><p class="text-gray-600">A modern take on workwear with a structured blazer and silk blouse.</p></div></div>
                 </div>
-                <!-- AI Stylist -->
-                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
-                    <h3 class="text-3xl font-bold text-center mb-2">✨ Your Personal AI Stylist</h3>
-                    <p class="text-center text-gray-600 mb-6">Stuck in a style rut? Describe an occasion and a few items you own, and get an instant outfit idea.</p>
-                    <textarea id="style-input" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4" placeholder="e.g., Occasion: brunch with friends. Items: high-waisted jeans, white t-shirt, black blazer..."></textarea>
-                    <div class="text-center mt-6">
-                        <button id="generate-style-btn" class="btn-primary">Generate Outfit Idea</button>
-                    </div>
-                    <div id="style-result" class="mt-6"></div>
-                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12"><h3 class="text-3xl font-bold text-center mb-2">✨ Your Personal AI Stylist</h3><p class="text-center text-gray-600 mb-6">Stuck in a style rut? Describe an occasion and a few items you own, and get an instant outfit idea.</p><textarea id="style-input" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4" placeholder="e.g., Occasion: brunch with friends. Items: high-waisted jeans, white t-shirt, black blazer..."></textarea><div class="text-center mt-6"><button id="generate-style-btn" class="btn-primary">Generate Outfit Idea</button></div><div id="style-result" class="mt-6"></div></div>
             </section>
 
             <!-- Wellness Section -->
             <section id="wellness" class="mb-20 scroll-mt-20">
                 <h2 class="text-5xl font-bold mb-10 text-center">Mindful Wellness</h2>
-                <div class="grid md:grid-cols-2 gap-8 mb-16">
-                    <!-- Wellness Links -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-bold mb-3">More Nourishing Recipes</h3>
-                        <p class="text-gray-600 mb-4">Explore our full collection of simple, healthy recipes that taste as good as they look.</p>
-                        <a href="#" class="text-black hover:underline font-semibold">Discover All Recipes &rarr;</a>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-bold mb-3">Movement & Mindfulness</h3>
-                        <p class="text-gray-600 mb-4">From gentle yoga flows to energizing pilates, find a routine that connects your mind and body.</p>
-                        <a href="#" class="text-black hover:underline font-semibold">Find Your Flow &rarr;</a>
-                    </div>
+                <div class="grid md:grid-cols-1 gap-8 mb-16 max-w-md mx-auto">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://res.cloudinary.com/dbco5pn5v/image/upload/v1752724932/peanut_thai_noodles_wrsae6.jpg" alt="A delicious bowl of peanut thai noodles" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"><div class="p-6"><h3 class="text-2xl font-bold mb-2">Peanut Thai Noodles</h3><p class="text-gray-600 mb-4">A quick, flavorful, and satisfying noodle dish for any night of the week.</p><a href="#" class="text-black hover:underline font-semibold recipe-link" data-recipe-id="peanutNoodles">Get the Recipe &rarr;</a></div></div>
                 </div>
-                 <!-- AI Chef -->
-                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
-                    <h3 class="text-3xl font-bold text-center mb-2">✨ AI Recipe Creator</h3>
-                    <p class="text-center text-gray-600 mb-6">What's in your fridge? List your ingredients and get a custom, healthy recipe in seconds.</p>
-                    <textarea id="wellness-input" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4" placeholder="e.g., chicken breast, broccoli, lemon, quinoa, garlic..."></textarea>
-                    <div class="text-center mt-6">
-                        <button id="generate-wellness-btn" class="btn-primary">Create My Recipe</button>
+                 <div class="bg-white rounded-lg shadow-lg p-8 md:p-12"><h3 class="text-3xl font-bold text-center mb-2">✨ AI Recipe Creator</h3><p class="text-center text-gray-600 mb-6">What's in your fridge? List your ingredients and get a custom, healthy recipe in seconds.</p><textarea id="wellness-input" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4" placeholder="e.g., chicken breast, broccoli, lemon, quinoa, garlic..."></textarea><div class="text-center mt-6"><button id="generate-wellness-btn" class="btn-primary">Create My Recipe</button></div><div id="wellness-result" class="mt-6"></div></div>
+            </section>
+            
+            <!-- Period Care Section -->
+            <section id="period-care" class="mb-20 scroll-mt-20">
+                <h2 class="text-5xl font-bold mb-10 text-center">Period Care</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="https://res.cloudinary.com/dbco5pn5v/image/upload/v1752794354/Tampons_qzpbdw.jpg" alt="A box of tampons for emergency situations" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3">The "Just-in-Case" Tampon</h3>
+                            <p class="text-gray-600">My rule of thumb: always keep one emergency tampon in every bag. I usually use a menstrual cup, but I forgot to restock my work bag today and it was so hectic! A little planning saves you from that kind of stress.</p>
+                        </div>
                     </div>
-                    <div id="wellness-result" class="mt-6"></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1589382091292-64785a815805?q=80&w=1887&auto=format&fit=crop" alt="A person holding a menstrual cup" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3">My Journey to a Better Period</h3>
+                            <p class="text-gray-600 mb-4">Finding the right period product can be a long journey. Here's my story and why I'll never go back.</p>
+                            <a href="#" id="debate-link" class="text-black hover:underline font-semibold">Read My Story &rarr;</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Suggestions Section -->
-            <section id="contact" class="bg-white rounded-lg p-12 text-center scroll-mt-20 shadow-lg">
-                <h2 class="text-4xl font-bold mb-4">Have a Suggestion?</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mb-8">I love hearing from you! Whether you have a content idea, a question, or just want to say hello, please drop me a line. This community is built together.</p>
-                <form class="max-w-xl mx-auto">
-                    <div class="mb-4">
-                        <input type="text" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
-                    </div>
-                    <div class="mb-4">
-                        <input type="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
-                    </div>
-                    <div class="mb-6">
-                        <textarea placeholder="Your suggestion or message..." rows="5" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Submit</button>
-                </form>
+            <!-- Booking Section -->
+            <section id="booking" class="mb-20 scroll-mt-20 bg-white rounded-lg p-8 md:p-12 shadow-lg">
+                <h2 class="text-5xl font-bold mb-4 text-center">Book a Friendly Chat</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">Just to be clear, I am not an advisor or psychologist. I am here to listen if you wanna share anything or you have any ideas. Think of this as a friendly meet, where we can discuss if you need a friend, if you are demotivated and you want me to give any suggestions.</p>
+                <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" class="max-w-xl mx-auto"><div class="mb-4"><input type="text" name="name" placeholder="Full Name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></div><div class="mb-4"><input type="email" name="email" placeholder="Email Address" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></div><div class="mb-6"><textarea name="message" placeholder="Purpose of Chat" rows="5" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></textarea></div><div class="text-center"><button type="submit" class="btn-primary">Request a Chat</button></div></form>
             </section>
         </div>
-    </main>
+    </div>
+
+    <!-- Recipe Detail Page (Hidden by default) -->
+    <div id="recipe-detail-page" class="hidden"><div class="container mx-auto px-6 py-12"><button id="back-to-main-recipe" class="mb-8 text-stone-800 hover:text-black font-semibold flex items-center">&larr; <span class="ml-2">Back to Main</span></button><h2 id="recipe-title" class="text-5xl md:text-6xl font-bold mb-8 text-center"></h2><div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"><div><img id="recipe-main-image" src="" alt="Main recipe photo" class="w-full rounded-lg shadow-xl mb-4"><div id="recipe-gallery" class="grid grid-cols-3 gap-4"></div></div><div class="prose max-w-none"><h3 class="text-3xl !mb-4">Ingredients</h3><ul id="recipe-ingredients" class="!mt-0"></ul><h3 class="text-3xl !mt-8 !mb-4">Instructions</h3><ol id="recipe-instructions" class="!mt-0"></ol></div></div></div></div>
+    
+    <!-- Debate Detail Page (Hidden by default) -->
+    <div id="debate-detail-page" class="hidden"><div class="container mx-auto px-6 py-12"><button id="back-to-main-debate" class="mb-8 text-stone-800 hover:text-black font-semibold flex items-center">&larr; <span class="ml-2">Back to Main</span></button><h2 class="text-5xl md:text-6xl font-bold mb-8 text-center">My Journey to a Better Period</h2><div class="prose max-w-4xl mx-auto"><p>Let's talk about something we all go through, but often in silence: finding the right period products. My journey has been a long one, and I want to share it in case it helps you.</p><h3>The Pad Phase: Rashes and Worries</h3><p>Like many, I started with sanitary pads. While they're simple, my experience wasn't great. I found them uncomfortable and often got rashes. Beyond the physical discomfort, they were expensive month after month, and I constantly worried about stains and waste.</p><h3>The Tampon Upgrade: Better, But Not Perfect</h3><p>Moving on to tampons was a step up. They were definitely easier to carry and avoided the rash issue. But I still had occasional leaks and staining, which meant the worry wasn't completely gone. They were still a monthly expense and generated waste.</p><h3>The Menstrual Cup: A True Game-Changer</h3><p>Then I discovered the menstrual cup, and it has been an excellent choice. It's leak-proof, there are no rashes, and absolutely no drama. But my journey with it wasn't perfect from the start—it was all about the cleaning.</p><h4>The Sterilization Struggle</h4><p>At first, I sterilized my cup by boiling it in a pot on the stove. I was always terrified it was going to melt, and honestly, using kitchen silverware for this felt unhygienic and awkward. Then I tried a silicone sterilizing box for the microwave. That was better, but using the same microwave for my food right after felt strange and still a bit awkward.</p><div class="bg-rose-50 border-l-4 border-rose-200 p-4 rounded-r-lg my-6"><strong>The Perfect Solution:</strong> Finally, I found an electric sterilizing cup. This was the missing piece! You just add a little water, plug it in, and it's done. It's completely separate from my kitchen, it's discreet, and it's incredibly easy. It took away all the awkwardness and made using a menstrual cup the simple, stress-free experience it was meant to be. For me, it's the absolute best choice.</div><hr><h3 class="!mt-12">Join the Conversation</h3><p>What's your go-to and why? Share your experiences and tips with the community!</p><div id="comment-section" class="mt-8"></div><div class="mt-8"><textarea id="comment-input" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4" placeholder="Share your thoughts..."></textarea><div class="text-right mt-4"><button id="submit-comment-btn" class="btn-primary">Submit Comment</button></div></div></div></div></div>
 
     <!-- Footer -->
-    <footer class="bg-white mt-16 border-t">
-        <div class="container mx-auto px-6 py-10 text-center text-gray-600">
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="https://www.instagram.com/timely.ll" target="_blank" rel="noopener noreferrer" class="hover:text-black">Instagram</a>
-                <a href="https://www.pinterest.com/akamshareddy" target="_blank" rel="noopener noreferrer" class="hover:text-black">Pinterest</a>
-            </div>
-            <p class="text-sm">&copy; 2024 She Shines. A guide to intentional living.</p>
-        </div>
-    </footer>
+    <footer class="bg-white mt-16 border-t"><div class="container mx-auto px-6 py-10 text-center text-gray-600"><div class="flex justify-center space-x-6 mb-6"><a href="https://www.instagram.com/timely.ll" target="_blank" rel="noopener noreferrer" class="hover:text-black">Instagram</a><a href="https://www.pinterest.com/akamshareddy" target="_blank" rel="noopener noreferrer" class="hover:text-black">Pinterest</a></div><p class="text-sm">&copy; 2024 Sincerely, Her. A guide to intentional living.</p></div></footer>
 
-    <script>
-        // --- Mobile Menu Toggle ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, query, onSnapshot, serverTimestamp, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "DEMO", authDomain: "DEMO", projectId: "DEMO" };
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let userId = auth.currentUser?.uid;
+
+        async function authUser() {
+            if (auth.currentUser) return;
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                userId = auth.currentUser.uid;
+            } catch (error) {
+                console.error("Authentication Error:", error);
+            }
+        }
+        
+        const mainContent = document.getElementById('main-content');
+        const recipeDetailPage = document.getElementById('recipe-detail-page');
+        const debateDetailPage = document.getElementById('debate-detail-page');
+        const backToMainRecipeBtn = document.getElementById('back-to-main-recipe');
+        const backToMainDebateBtn = document.getElementById('back-to-main-debate');
+        const homeLink = document.getElementById('home-link');
+        const debateLink = document.getElementById('debate-link');
+
+        const recipes = {
+            peanutNoodles: { title: "Peanut Thai Noodles with Pesto Bread", images: ["https://res.cloudinary.com/dbco5pn5v/image/upload/v1752724932/peanut_thai_noodles_wrsae6.jpg", "https://images.unsplash.com/photo-1621239429033-6e2d103a45b3?q=80&w=1887&auto=format&fit=crop", "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1887&auto=format&fit=crop", "https://images.unsplash.com/photo-1607589636064-424c56571e34?q=80&w=1887&auto=format&fit=crop"], ingredients: ["Linguine pasta", "1/2 cup peanut butter", "3 tbsp soy sauce", "2 tbsp rice vinegar", "1 tbsp sriracha (or to taste)", "1 tbsp honey", "1/4 cup water", "1 tsp corn flour", "1 tbsp avocado oil", "1 cup broccoli florets", "1/2 onion, sliced", "For Pesto Bread: Sliced bread, store-bought pesto (from Whole Foods or similar), shredded mozzarella cheese"], instructions: ["Cook linguine pasta according to package directions. Drain and set aside.", "In a medium bowl, whisk together peanut butter, soy sauce, rice vinegar, sriracha, honey, water, and corn flour until smooth.", "In a large skillet or wok, heat avocado oil over medium-high heat. Add the sliced onions and broccoli, and sauté until tender-crisp, about 5-7 minutes.", "Add the cooked pasta and peanut sauce to the skillet with the vegetables. Toss everything together until the pasta and vegetables are well-coated in the sauce.", "For the pesto bread: spread a layer of pesto on your bread slices, top with shredded mozzarella, and toast in an oven or toaster oven until the cheese is golden and bubbly.", "Serve noodles immediately with the pesto bread on the side."]}
+        };
+
+        function showPage(page) {
+            window.scrollTo(0, 0);
+            mainContent.classList.add('hidden');
+            recipeDetailPage.classList.add('hidden');
+            debateDetailPage.classList.add('hidden');
+            if (page === 'recipe') recipeDetailPage.classList.remove('hidden');
+            else if (page === 'debate') debateDetailPage.classList.remove('hidden');
+            else mainContent.classList.remove('hidden');
+        }
+
+        function loadRecipe(recipeId) {
+            const recipe = recipes[recipeId];
+            if (!recipe) return;
+            document.getElementById('recipe-title').textContent = recipe.title;
+            document.getElementById('recipe-main-image').src = recipe.images[0];
+            const gallery = document.getElementById('recipe-gallery');
+            gallery.innerHTML = '';
+            recipe.images.slice(1).forEach(imgUrl => {
+                const img = document.createElement('img');
+                img.src = imgUrl; img.alt = `View of ${recipe.title}`; img.className = 'w-full h-24 object-cover rounded-lg shadow-md cursor-pointer';
+                img.onclick = () => { document.getElementById('recipe-main-image').src = imgUrl; };
+                gallery.appendChild(img);
+            });
+            const ingredientsList = document.getElementById('recipe-ingredients');
+            ingredientsList.innerHTML = '';
+            recipe.ingredients.forEach(item => { const li = document.createElement('li'); li.textContent = item; ingredientsList.appendChild(li); });
+            const instructionsList = document.getElementById('recipe-instructions');
+            instructionsList.innerHTML = '';
+            recipe.instructions.forEach(step => { const li = document.createElement('li'); li.textContent = step; instructionsList.appendChild(li); });
+            showPage('recipe');
+        }
+
+        document.querySelectorAll('.recipe-link').forEach(link => {
+            link.addEventListener('click', (e) => { e.preventDefault(); const recipeId = e.currentTarget.dataset.recipeId; loadRecipe(recipeId); });
         });
 
-        // --- Smooth Scrolling ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        debateLink.addEventListener('click', (e) => { e.preventDefault(); showPage('debate'); });
+        backToMainRecipeBtn.addEventListener('click', () => showPage('main'));
+        backToMainDebateBtn.addEventListener('click', () => showPage('main'));
+        homeLink.addEventListener('click', (e) => { e.preventDefault(); showPage('main'); });
+        
+        document.querySelectorAll('.main-nav-link').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                mobileMenu.classList.add('hidden'); // Close mobile menu on click
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                showPage('main');
+                setTimeout(() => { document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); }, 100);
             });
         });
 
-        // --- Gemini API Integration ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
         const styleBtn = document.getElementById('generate-style-btn');
         const wellnessBtn = document.getElementById('generate-wellness-btn');
-
         const styleInput = document.getElementById('style-input');
         const wellnessInput = document.getElementById('wellness-input');
-
         const styleResult = document.getElementById('style-result');
         const wellnessResult = document.getElementById('wellness-result');
-
-        const apiKey = ""; // API key will be injected by the environment
+        const apiKey = "";
 
         async function callGeminiAPI(prompt, resultElement, buttonElement) {
             resultElement.innerHTML = '<div class="ai-result">Generating...</div>';
             buttonElement.disabled = true;
-
             try {
                 let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
                 const payload = { contents: chatHistory };
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
-
+                const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                if (!response.ok) { throw new Error(`API request failed with status ${response.status}`); }
                 const result = await response.json();
-                
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
                     const text = result.candidates[0].content.parts[0].text;
                     resultElement.innerHTML = `<div class="ai-result">${text}</div>`;
-                } else {
-                    throw new Error("Invalid response structure from API.");
-                }
-
+                } else { throw new Error("Invalid response structure from API."); }
             } catch (error) {
                 console.error("Gemini API Error:", error);
                 resultElement.innerHTML = `<div class="ai-result" style="border-color: #ef4444;">Sorry, something went wrong. Please try again.</div>`;
@@ -266,20 +280,77 @@
         styleBtn.addEventListener('click', () => {
             const userInput = styleInput.value;
             if (!userInput.trim()) return;
-            const prompt = `You are a chic and modern fashion stylist for a blog called "She Shines". A user needs an outfit idea.
-            User's request: "${userInput}".
-            Based on their request, create a detailed outfit description in a friendly, blog-like tone. Suggest specific types of clothing, shoes, and accessories to complete the look.`;
+            const prompt = `You are a chic and modern fashion stylist for a blog called "Sincerely, Her". A user needs an outfit idea. User's request: "${userInput}". Based on their request, create a detailed outfit description in a friendly, blog-like tone. Suggest specific types of clothing, shoes, and accessories to complete the look.`;
             callGeminiAPI(prompt, styleResult, styleBtn);
         });
 
         wellnessBtn.addEventListener('click', () => {
             const userInput = wellnessInput.value;
             if (!userInput.trim()) return;
-            const prompt = `You are a creative and health-conscious chef for a wellness blog called "She Shines". A user has listed ingredients they have on hand.
-            User's ingredients: "${userInput}".
-            Based on these ingredients, create a simple, healthy, and delicious recipe. Format the response clearly with a "Recipe Name", a brief "Description", a list of "Ingredients", and step-by-step "Instructions".`;
+            const prompt = `You are a creative and health-conscious chef for a blog called "Sincerely, Her". A user has listed ingredients they have on hand. User's ingredients: "${userInput}". Based on these ingredients, create a simple, healthy, and delicious recipe. Format the response clearly with a "Recipe Name", a brief "Description", a list of "Ingredients", and step-by-step "Instructions".`;
             callGeminiAPI(prompt, wellnessResult, wellnessBtn);
         });
+
+        // Firestore Comment Section Logic
+        const commentInput = document.getElementById('comment-input');
+        const submitCommentBtn = document.getElementById('submit-comment-btn');
+        const commentSection = document.getElementById('comment-section');
+
+        async function initComments() {
+            await authUser();
+            const commentsCollectionPath = `/artifacts/${appId}/public/data/period_debate_comments`;
+            const q = query(collection(db, commentsCollectionPath));
+
+            onSnapshot(q, (snapshot) => {
+                const comments = [];
+                snapshot.forEach(doc => comments.push({ id: doc.id, ...doc.data() }));
+                // Sort by timestamp, newest first
+                comments.sort((a, b) => (b.timestamp?.toDate() || 0) - (a.timestamp?.toDate() || 0));
+                renderComments(comments);
+            });
+
+            submitCommentBtn.addEventListener('click', async () => {
+                const commentText = commentInput.value.trim();
+                if (commentText && userId) {
+                    try {
+                        await addDoc(collection(db, commentsCollectionPath), {
+                            text: commentText,
+                            author: userId,
+                            timestamp: serverTimestamp()
+                        });
+                        commentInput.value = '';
+                    } catch (error) {
+                        console.error("Error adding comment: ", error);
+                    }
+                }
+            });
+        }
+
+        function renderComments(comments) {
+            commentSection.innerHTML = '';
+            if (comments.length === 0) {
+                commentSection.innerHTML = '<p class="text-gray-500">Be the first to comment!</p>';
+                return;
+            }
+            comments.forEach(comment => {
+                const commentEl = document.createElement('div');
+                commentEl.className = 'bg-stone-100 p-4 rounded-lg mb-4';
+                
+                const authorEl = document.createElement('p');
+                authorEl.className = 'text-xs text-gray-500 font-semibold truncate';
+                authorEl.textContent = `User: ${comment.author}`;
+
+                const textEl = document.createElement('p');
+                textEl.className = 'text-gray-800';
+                textEl.textContent = comment.text;
+
+                commentEl.appendChild(authorEl);
+                commentEl.appendChild(textEl);
+                commentSection.appendChild(commentEl);
+            });
+        }
+
+        initComments();
 
     </script>
 
