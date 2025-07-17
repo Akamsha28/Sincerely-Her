@@ -19,10 +19,21 @@
             font-weight: 700;
         }
         .nav-link {
-            @apply text-gray-700 hover:text-black transition duration-300 uppercase tracking-wider text-sm;
+            @apply text-gray-700 hover:text-black transition duration-300 uppercase tracking-wider text-sm flex items-center;
         }
         .btn-primary {
-             @apply bg-stone-800 text-white py-3 px-8 rounded-full hover:bg-black transition duration-300 uppercase tracking-widest text-xs;
+             @apply bg-stone-800 text-white py-3 px-8 rounded-full hover:bg-black transition duration-300 uppercase tracking-widest text-xs disabled:bg-stone-400;
+        }
+        .ai-result {
+            white-space: pre-wrap;
+            background-color: #f9fafb;
+            border-left: 4px solid #e5e7eb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #374151;
         }
     </style>
 </head>
@@ -33,10 +44,18 @@
         <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
             <a href="#" class="text-4xl font-bold tracking-tighter text-black">She Shines</a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#style" class="nav-link">Style</a>
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#wellness" class="nav-link">Wellness</a>
-                <a href="#contact" class="nav-link">Suggestions</a>
+                <a href="#style" class="nav-link">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.47 2.118v-.09a2.25 2.25 0 0 1 2.47-2.118c1.073 0 2.062-.379 2.87-1.128a3.001 3.001 0 0 0 5.78 1.128v-.09a2.25 2.25 0 0 1-2.47 2.118c-1.073 0-2.062-.379-2.87-1.128Zm-7.53-4.28a3 3 0 0 0 5.78-1.128 2.25 2.25 0 0 1 2.47-2.118v.09a2.25 2.25 0 0 1-2.47 2.118c-1.073 0-2.062.379-2.87 1.128a3.001 3.001 0 0 0-5.78-1.128v.09a2.25 2.25 0 0 1 2.47-2.118c1.073 0 2.062.379 2.87 1.128Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c.249 0 .497-.009.741-.025M12 21a9.004 9.004 0 0 1-8.716-6.747M12 3c-4.816 0-8.716 3.9-8.716 8.747M12 3c4.816 0 8.716 3.9 8.716 8.747M12 3c.249 0 .497.009.741-.025M12 3a9.004 9.004 0 0 1 8.716 6.747"></path></svg>
+                    Style
+                </a>
+                <a href="#wellness" class="nav-link">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path></svg>
+                    Wellness
+                </a>
+                <a href="#contact" class="nav-link">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path></svg>
+                    Suggestions
+                </a>
             </div>
             <button id="mobile-menu-button" class="md:hidden flex items-center">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -44,10 +63,18 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#style" class="block py-2 nav-link">Style</a>
-            <a href="#home" class="block py-2 nav-link">Home</a>
-            <a href="#wellness" class="block py-2 nav-link">Wellness</a>
-            <a href="#contact" class="block py-2 nav-link">Suggestions</a>
+            <a href="#style" class="block py-2 nav-link">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.47 2.118v-.09a2.25 2.25 0 0 1 2.47-2.118c1.073 0 2.062-.379 2.87-1.128a3.001 3.001 0 0 0 5.78 1.128v-.09a2.25 2.25 0 0 1-2.47 2.118c-1.073 0-2.062-.379-2.87-1.128Zm-7.53-4.28a3 3 0 0 0 5.78-1.128 2.25 2.25 0 0 1 2.47-2.118v.09a2.25 2.25 0 0 1-2.47 2.118c-1.073 0-2.062.379-2.87 1.128a3.001 3.001 0 0 0-5.78-1.128v.09a2.25 2.25 0 0 1 2.47-2.118c1.073 0 2.062.379 2.87 1.128Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c.249 0 .497-.009.741-.025M12 21a9.004 9.004 0 0 1-8.716-6.747M12 3c-4.816 0-8.716 3.9-8.716 8.747M12 3c4.816 0 8.716 3.9 8.716 8.747M12 3c.249 0 .497.009.741-.025M12 3a9.004 9.004 0 0 1 8.716 6.747"></path></svg>
+                Style
+            </a>
+            <a href="#wellness" class="block py-2 nav-link">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path></svg>
+                Wellness
+            </a>
+            <a href="#contact" class="block py-2 nav-link">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path></svg>
+                Suggestions
+            </a>
         </div>
     </header>
 
@@ -58,7 +85,7 @@
         <section class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
                 <h1 class="text-6xl md:text-7xl leading-tight mb-4">Live with Intention & Style</h1>
-                <p class="text-lg text-gray-600 max-w-lg mx-auto md:mx-0">An elevated guide to modern living. Curated style, serene interiors, and mindful wellness for the contemporary woman.</p>
+                <p class="text-lg text-gray-600 max-w-lg mx-auto md:mx-0">An elevated guide to modern living. Curated style and mindful wellness for the contemporary woman. Now with AI-powered assistants to spark your creativity.</p>
             </div>
             <div class="md:w-1/2">
                 <img src="https://placehold.co/800x1000/e0e0e0/ffffff?text=Chic+Mood" alt="Chic fashion moodboard" class="rounded-lg shadow-xl w-full max-w-md mx-auto">
@@ -69,7 +96,7 @@
             <!-- Daily Outfit Ideas Section -->
             <section id="style" class="mb-20 scroll-mt-20">
                 <h2 class="text-5xl font-bold mb-10 text-center">The Daily Edit: Style</h2>
-                <div class="grid md:grid-cols-3 gap-8">
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
                     <!-- Outfit 1 -->
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
                         <img src="https://placehold.co/600x800/d1d5db/374151?text=Look+1" alt="Chic city outfit" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500">
@@ -95,39 +122,43 @@
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- Interior Ideas Section -->
-            <section id="home" class="mb-20 scroll-mt-20">
-                <h2 class="text-5xl font-bold mb-10 text-center">The Art of Home</h2>
-                <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                         <img src="https://placehold.co/800x600/f5f5f4/374151?text=Serene+Living" alt="Minimalist living room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <!-- AI Stylist -->
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                    <h3 class="text-3xl font-bold text-center mb-2">✨ Your Personal AI Stylist</h3>
+                    <p class="text-center text-gray-600 mb-6">Stuck in a style rut? Describe an occasion and a few items you own, and get an instant outfit idea.</p>
+                    <textarea id="style-input" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4" placeholder="e.g., Occasion: brunch with friends. Items: high-waisted jeans, white t-shirt, black blazer..."></textarea>
+                    <div class="text-center mt-6">
+                        <button id="generate-style-btn" class="btn-primary">Generate Outfit Idea</button>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-3xl font-bold mb-4">Creating a Serene Space</h3>
-                        <p class="text-gray-600 mb-6">Discover the principles of minimalist design to transform your home into a tranquil sanctuary. We explore neutral palettes, natural textures, and the importance of decluttering for a peaceful mind.</p>
-                        <a href="#" class="btn-primary">Explore Ideas</a>
-                    </div>
+                    <div id="style-result" class="mt-6"></div>
                 </div>
             </section>
 
             <!-- Wellness Section -->
             <section id="wellness" class="mb-20 scroll-mt-20">
                 <h2 class="text-5xl font-bold mb-10 text-center">Mindful Wellness</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Wellness 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-bold mb-3">Nourishing Recipes</h3>
-                        <p class="text-gray-600 mb-4">Simple, healthy recipes that taste as good as they look. Fuel your body with vibrant, wholesome food.</p>
-                        <a href="#" class="text-black hover:underline font-semibold">Discover Recipes &rarr;</a>
-                    </div>
-                    <!-- Wellness 2 -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <!-- Wellness Links -->
                     <div class="bg-white p-8 rounded-lg shadow-lg">
                         <h3 class="text-2xl font-bold mb-3">Movement & Mindfulness</h3>
                         <p class="text-gray-600 mb-4">From gentle yoga flows to energizing pilates, find a routine that connects your mind and body.</p>
                         <a href="#" class="text-black hover:underline font-semibold">Find Your Flow &rarr;</a>
                     </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-3">More Nourishing Recipes</h3>
+                        <p class="text-gray-600 mb-4">Explore our full collection of simple, healthy recipes that taste as good as they look.</p>
+                        <a href="#" class="text-black hover:underline font-semibold">Discover All Recipes &rarr;</a>
+                    </div>
+                </div>
+                 <!-- AI Chef -->
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                    <h3 class="text-3xl font-bold text-center mb-2">✨ AI Recipe Creator</h3>
+                    <p class="text-center text-gray-600 mb-6">What's in your fridge? List your ingredients and get a custom, healthy recipe in seconds.</p>
+                    <textarea id="wellness-input" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4" placeholder="e.g., chicken breast, broccoli, lemon, quinoa, garlic..."></textarea>
+                    <div class="text-center mt-6">
+                        <button id="generate-wellness-btn" class="btn-primary">Create My Recipe</button>
+                    </div>
+                    <div id="wellness-result" class="mt-6"></div>
                 </div>
             </section>
 
@@ -155,16 +186,15 @@
     <footer class="bg-white mt-16 border-t">
         <div class="container mx-auto px-6 py-10 text-center text-gray-600">
             <div class="flex justify-center space-x-6 mb-6">
-                <a href="#" class="hover:text-black">Instagram</a>
-                <a href="#" class="hover:text-black">Pinterest</a>
-                <a href="#" class="hover:text-black">TikTok</a>
+                <a href="https://www.instagram.com/timely.ll" target="_blank" rel="noopener noreferrer" class="hover:text-black">Instagram</a>
+                <a href="https://www.pinterest.com/akamshareddy" target="_blank" rel="noopener noreferrer" class="hover:text-black">Pinterest</a>
             </div>
             <p class="text-sm">&copy; 2024 She Shines. A guide to intentional living.</p>
         </div>
     </footer>
 
     <script>
-        // JavaScript for mobile menu toggle
+        // --- Mobile Menu Toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -172,7 +202,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Smooth scrolling for navigation links
+        // --- Smooth Scrolling ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -182,8 +212,76 @@
                 });
             });
         });
+
+        // --- Gemini API Integration ---
+        const styleBtn = document.getElementById('generate-style-btn');
+        const wellnessBtn = document.getElementById('generate-wellness-btn');
+
+        const styleInput = document.getElementById('style-input');
+        const wellnessInput = document.getElementById('wellness-input');
+
+        const styleResult = document.getElementById('style-result');
+        const wellnessResult = document.getElementById('wellness-result');
+
+        const apiKey = ""; // API key will be injected by the environment
+
+        async function callGeminiAPI(prompt, resultElement, buttonElement) {
+            resultElement.innerHTML = '<div class="ai-result">Generating...</div>';
+            buttonElement.disabled = true;
+
+            try {
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    resultElement.innerHTML = `<div class="ai-result">${text}</div>`;
+                } else {
+                    throw new Error("Invalid response structure from API.");
+                }
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                resultElement.innerHTML = `<div class="ai-result" style="border-color: #ef4444;">Sorry, something went wrong. Please try again.</div>`;
+            } finally {
+                buttonElement.disabled = false;
+            }
+        }
+
+        styleBtn.addEventListener('click', () => {
+            const userInput = styleInput.value;
+            if (!userInput.trim()) return;
+            const prompt = `You are a chic and modern fashion stylist for a blog called "She Shines". A user needs an outfit idea.
+            User's request: "${userInput}".
+            Based on their request, create a detailed outfit description in a friendly, blog-like tone. Suggest specific types of clothing, shoes, and accessories to complete the look.`;
+            callGeminiAPI(prompt, styleResult, styleBtn);
+        });
+
+        wellnessBtn.addEventListener('click', () => {
+            const userInput = wellnessInput.value;
+            if (!userInput.trim()) return;
+            const prompt = `You are a creative and health-conscious chef for a wellness blog called "She Shines". A user has listed ingredients they have on hand.
+            User's ingredients: "${userInput}".
+            Based on these ingredients, create a simple, healthy, and delicious recipe. Format the response clearly with a "Recipe Name", a brief "Description", a list of "Ingredients", and step-by-step "Instructions".`;
+            callGeminiAPI(prompt, wellnessResult, wellnessBtn);
+        });
+
     </script>
 
 </body>
 </html>
-
