@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She Shines | A Chic Lifestyle Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FDFBF8; /* Off-white, parchment color */
+            color: #333333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+        }
+        .nav-link {
+            @apply text-gray-700 hover:text-black transition duration-300 uppercase tracking-wider text-sm;
+        }
+        .btn-primary {
+             @apply bg-stone-800 text-white py-3 px-8 rounded-full hover:bg-black transition duration-300 uppercase tracking-widest text-xs;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-4xl font-bold tracking-tighter text-black">She Shines</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#style" class="nav-link">Style</a>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#wellness" class="nav-link">Wellness</a>
+                <a href="#contact" class="nav-link">Suggestions</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#style" class="block py-2 nav-link">Style</a>
+            <a href="#home" class="block py-2 nav-link">Home</a>
+            <a href="#wellness" class="block py-2 nav-link">Wellness</a>
+            <a href="#contact" class="block py-2 nav-link">Suggestions</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="text-6xl md:text-7xl leading-tight mb-4">Live with Intention & Style</h1>
+                <p class="text-lg text-gray-600 max-w-lg mx-auto md:mx-0">An elevated guide to modern living. Curated style, serene interiors, and mindful wellness for the contemporary woman.</p>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/800x1000/e0e0e0/ffffff?text=Chic+Mood" alt="Chic fashion moodboard" class="rounded-lg shadow-xl w-full max-w-md mx-auto">
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6 py-12">
+            <!-- Daily Outfit Ideas Section -->
+            <section id="style" class="mb-20 scroll-mt-20">
+                <h2 class="text-5xl font-bold mb-10 text-center">The Daily Edit: Style</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Outfit 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x800/d1d5db/374151?text=Look+1" alt="Chic city outfit" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">City Monochrome</h3>
+                            <p class="text-gray-600 mb-4">Effortless sophistication with tailored trousers and a classic trench.</p>
+                        </div>
+                    </div>
+                    <!-- Outfit 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x800/f5f5f4/374151?text=Look+2" alt="Weekend casual outfit" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Weekend Casual</h3>
+                            <p class="text-gray-600 mb-4">Elevated comfort featuring premium denim and a cashmere knit.</p>
+                        </div>
+                    </div>
+                    <!-- Outfit 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x800/e5e7eb/374151?text=Look+3" alt="Office power look" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Office Power</h3>
+                            <p class="text-gray-600 mb-4">A modern take on workwear with a structured blazer and silk blouse.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interior Ideas Section -->
+            <section id="home" class="mb-20 scroll-mt-20">
+                <h2 class="text-5xl font-bold mb-10 text-center">The Art of Home</h2>
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                         <img src="https://placehold.co/800x600/f5f5f4/374151?text=Serene+Living" alt="Minimalist living room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-3xl font-bold mb-4">Creating a Serene Space</h3>
+                        <p class="text-gray-600 mb-6">Discover the principles of minimalist design to transform your home into a tranquil sanctuary. We explore neutral palettes, natural textures, and the importance of decluttering for a peaceful mind.</p>
+                        <a href="#" class="btn-primary">Explore Ideas</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wellness Section -->
+            <section id="wellness" class="mb-20 scroll-mt-20">
+                <h2 class="text-5xl font-bold mb-10 text-center">Mindful Wellness</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Wellness 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-3">Nourishing Recipes</h3>
+                        <p class="text-gray-600 mb-4">Simple, healthy recipes that taste as good as they look. Fuel your body with vibrant, wholesome food.</p>
+                        <a href="#" class="text-black hover:underline font-semibold">Discover Recipes &rarr;</a>
+                    </div>
+                    <!-- Wellness 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-3">Movement & Mindfulness</h3>
+                        <p class="text-gray-600 mb-4">From gentle yoga flows to energizing pilates, find a routine that connects your mind and body.</p>
+                        <a href="#" class="text-black hover:underline font-semibold">Find Your Flow &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Suggestions Section -->
+            <section id="contact" class="bg-white rounded-lg p-12 text-center scroll-mt-20 shadow-lg">
+                <h2 class="text-4xl font-bold mb-4">Have a Suggestion?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8">I love hearing from you! Whether you have a content idea, a question, or just want to say hello, please drop me a line. This community is built together.</p>
+                <form class="max-w-xl mx-auto">
+                    <div class="mb-4">
+                        <input type="text" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    </div>
+                    <div class="mb-6">
+                        <textarea placeholder="Your suggestion or message..." rows="5" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-16 border-t">
+        <div class="container mx-auto px-6 py-10 text-center text-gray-600">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-black">Instagram</a>
+                <a href="#" class="hover:text-black">Pinterest</a>
+                <a href="#" class="hover:text-black">TikTok</a>
+            </div>
+            <p class="text-sm">&copy; 2024 She Shines. A guide to intentional living.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden'); // Close mobile menu on click
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
 
