@@ -188,8 +188,15 @@
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, addDoc, query, onSnapshot, serverTimestamp, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "DEMO", authDomain: "DEMO", projectId: "DEMO" };
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = {
+          apiKey: "AIzaSyD22DnC06JQq2x0dGO-d2D0F6TiR29h2zE",
+          authDomain: "sincerelyher-3fea8.firebaseapp.com",
+          projectId: "sincerelyher-3fea8",
+          storageBucket: "sincerelyher-3fea8.firebasestorage.app",
+          messagingSenderId: "293545833232",
+          appId: "1:293545833232:web:1a9204f45d2146ab376b95"
+        };
+        const appId = 'sincerely-her-app'; // You can keep this as a default name
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
@@ -220,7 +227,7 @@
         const debateLink = document.getElementById('debate-link');
 
         const recipes = {
-            peanutNoodles: { title: "Peanut Thai Noodles with Pesto Bread", images: ["https://res.cloudinary.com/dbco5pn5v/image/upload/v1752724932/peanut_thai_noodles_wrsae6.jpg", "https://images.unsplash.com/photo-1621239429033-6e2d103a45b3?q=80&w=1887&auto=format&fit=crop", "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1887&auto=format&fit=crop", "https://images.unsplash.com/photo-1607589636064-424c56571e34?q=80&w=1887&auto=format&fit=crop"], ingredients: ["Linguine pasta", "1/2 cup peanut butter", "3 tbsp soy sauce", "2 tbsp rice vinegar", "1 tbsp sriracha (or to taste)", "1 tbsp honey", "1/4 cup water", "1 tsp corn flour", "1 tbsp avocado oil", "1 cup broccoli florets", "1/2 onion, sliced", "For Pesto Bread: Sliced bread, store-bought pesto (from Whole Foods or similar), shredded mozzarella cheese"], instructions: ["Cook linguine pasta according to package directions. Drain and set aside.", "In a medium bowl, whisk together peanut butter, soy sauce, rice vinegar, sriracha, honey, water, and corn flour until smooth.", "In a large skillet or wok, heat avocado oil over medium-high heat. Add the sliced onions and broccoli, and sauté until tender-crisp, about 5-7 minutes.", "Add the cooked pasta and peanut sauce to the skillet with the vegetables. Toss everything together until the pasta and vegetables are well-coated in the sauce.", "For the pesto bread: spread a layer of pesto on your bread slices, top with shredded mozzarella, and toast in an oven or toaster oven until the cheese is golden and bubbly.", "Serve noodles immediately with the pesto bread on the side."]}
+            peanutNoodles: { title: "Peanut Thai Noodles with Pesto Bread", images: ["https://res.cloudinary.com/dbco5pn5v/image/upload/v1752724932/peanut_thai_noodles_wrsae6.jpg"], ingredients: ["Linguine pasta", "1/2 cup peanut butter", "3 tbsp soy sauce", "2 tbsp rice vinegar", "1 tbsp sriracha (or to taste)", "1 tbsp honey", "1/4 cup water", "1 tsp corn flour", "1 tbsp avocado oil", "1 cup broccoli florets", "1/2 onion, sliced", "For Pesto Bread: Sliced bread, store-bought pesto (from Whole Foods or similar), shredded mozzarella cheese"], instructions: ["Cook linguine pasta according to package directions. Drain and set aside.", "In a medium bowl, whisk together peanut butter, soy sauce, rice vinegar, sriracha, honey, water, and corn flour until smooth.", "In a large skillet or wok, heat avocado oil over medium-high heat. Add the sliced onions and broccoli, and sauté until tender-crisp, about 5-7 minutes.", "Add the cooked pasta and peanut sauce to the skillet with the vegetables. Toss everything together until the pasta and vegetables are well-coated in the sauce.", "For the pesto bread: spread a layer of pesto on your bread slices, top with shredded mozzarella, and toast in an oven or toaster oven until the cheese is golden and bubbly.", "Serve noodles immediately with the pesto bread on the side."]}
         };
 
         function showPage(page) {
@@ -389,8 +396,7 @@
         ];
 
         const sliderContainer = document.getElementById('slider-container');
-        const sliderTrack = document.getElementById('slider-track');
-
+        
         galleryData.forEach(item => {
             const slide = document.createElement('div');
             slide.className = 'w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 snap-center';
@@ -400,7 +406,7 @@
                     <div class="p-4"><p class="text-center text-gray-600 truncate">${item.desc}</p></div>
                 </div>
             `;
-            sliderTrack.appendChild(slide);
+            sliderContainer.appendChild(slide);
         });
         
         const prevButton = document.getElementById('prev-slide');
