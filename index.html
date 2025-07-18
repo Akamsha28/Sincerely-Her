@@ -185,8 +185,8 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, query, onSnapshot, serverTimestamp, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, query, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const firebaseConfig = {
           apiKey: "AIzaSyD22DnC06JQq2x0dGO-d2D0F6TiR29h2zE",
@@ -196,25 +196,25 @@
           messagingSenderId: "293545833232",
           appId: "1:293545833232:web:1a9204f45d2146ab376b95"
         };
-        const appId = 'sincerely-her-app'; // You can keep this as a default name
+        
+        const appId = 'sincerely-her-app';
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
 
-        let userId = auth.currentUser?.uid;
+        let userId = null;
 
         async function authUser() {
-            if (auth.currentUser) return;
-            try {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
-                }
+            if (auth.currentUser) {
                 userId = auth.currentUser.uid;
+                return;
+            };
+            try {
+                const userCredential = await signInAnonymously(auth);
+                userId = userCredential.user.uid;
             } catch (error) {
-                console.error("Authentication Error:", error);
+                console.error("Anonymous Authentication Error:", error);
             }
         }
         
@@ -413,11 +413,13 @@
         const nextButton = document.getElementById('next-slide');
         
         nextButton.addEventListener('click', () => {
-            sliderContainer.scrollBy({ left: sliderContainer.clientWidth, behavior: 'smooth' });
+            const slideWidth = sliderContainer.querySelector('div').clientWidth;
+            sliderContainer.scrollBy({ left: slideWidth, behavior: 'smooth' });
         });
 
         prevButton.addEventListener('click', () => {
-            sliderContainer.scrollBy({ left: -sliderContainer.clientWidth, behavior: 'smooth' });
+            const slideWidth = sliderContainer.querySelector('div').clientWidth;
+            sliderContainer.scrollBy({ left: -slideWidth, behavior: 'smooth' });
         });
 
         let isDown = false;
