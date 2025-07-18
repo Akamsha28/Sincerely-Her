@@ -387,11 +387,11 @@
 
         // Gallery Slider Logic
         const galleryData = [
-            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798499/Noi_Thai_Seattle_WA_t7x5lr.jpg", "desc": "Noi Thai, Seattle Downtown, WA." },
-            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798499/Neighborhood_Services_Creamy_peanut_chicken_vvljus.jpg", "desc": "Neighborhood Services, Dallas, TX. Village on the Parkway is the best complex." },
-            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798499/Milkweed_Boston_French_Breakfast_b2bddb.jpg", "desc": "Milkweed, Boston, MA best breakfast place." },
-            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798498/Jinya_Ramen_Bellevue_WA_xrwlk7.jpg", "desc": "Jinya Ramen, Bellevue, WA. The creamy shrimp was amazing." },
-            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798498/Chicken_n_Pickle_Plano_Texas_afttos.jpg", "desc": "Chicken 'N' Pickle, Grapevine, TX. Amazing to hangout with friends." },
+            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798499/Noi_Thai_Seattle_WA_t7x5lr.jpg", "desc": "Noi Thai, Seattle Downtown, WA.", "locationUrl": "https://maps.app.goo.gl/vemZUDLk7xFNQ1MFA" },
+            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798499/Neighborhood_Services_Creamy_peanut_chicken_vvljus.jpg", "desc": "Neighborhood Services, Dallas, TX.", "locationUrl": "https://maps.app.goo.gl/zchwGyhnchDpwnsQ8" },
+            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798499/Milkweed_Boston_French_Breakfast_b2bddb.jpg", "desc": "Milkweed, Boston, MA.", "locationUrl": "https://maps.app.goo.gl/xzQSM7iksJZKHDoy6" },
+            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798498/Jinya_Ramen_Bellevue_WA_xrwlk7.jpg", "desc": "Jinya Ramen, Bellevue, WA.", "locationUrl": "https://maps.app.goo.gl/WQtzhu6BzSocV18F6" },
+            { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798498/Chicken_n_Pickle_Plano_Texas_afttos.jpg", "desc": "Chicken 'N' Pickle, Grand Prairie, TX.", "locationUrl": "https://maps.app.goo.gl/qdk6DEFsSwpWStuG7" },
             { "img": "https://res.cloudinary.com/dbco5pn5v/image/upload/v1752798496/Brother_Birthday_with_little_Paris_Bugette_surprise_g1dy1d.jpg", "desc": "My brother's birthday, with a tiny slice of cake and cute chocolate croissant." }
         ];
 
@@ -400,12 +400,16 @@
         galleryData.forEach(item => {
             const slide = document.createElement('div');
             slide.className = 'w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 snap-center';
-            slide.innerHTML = `
+            
+            const content = `
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
                     <img src="${item.img}" alt="${item.desc}" class="w-full h-80 object-cover pointer-events-none group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-4"><p class="text-center text-gray-600 truncate">${item.desc}</p></div>
+                    <div class="p-4">
+                        ${item.locationUrl ? `<a href="${item.locationUrl}" target="_blank" rel="noopener noreferrer" class="hover:underline"><p class="text-center text-gray-600 truncate">${item.desc}</p></a>` : `<p class="text-center text-gray-600 truncate">${item.desc}</p>`}
+                    </div>
                 </div>
             `;
+            slide.innerHTML = content;
             sliderContainer.appendChild(slide);
         });
         
