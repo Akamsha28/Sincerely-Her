@@ -41,6 +41,17 @@
         .prose ol {
             list-style-position: inside;
         }
+        .slider-button {
+            @apply absolute top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed transition-opacity;
+        }
+        /* Hide scrollbar for the gallery */
+        #slider-container::-webkit-scrollbar {
+            display: none;
+        }
+        #slider-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
     </style>
 </head>
 <body>
@@ -145,25 +156,26 @@
             <section id="gallery" class="mb-20 scroll-mt-20">
                 <h2 class="text-5xl font-bold mb-10 text-center">Gallery</h2>
                 <div class="relative">
-                    <div id="slider-container" class="overflow-hidden cursor-grab active:cursor-grabbing">
-                        <div id="slider-track" class="flex">
-                            <!-- Slides will be injected here by JavaScript -->
-                        </div>
+                    <div id="slider-container" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth cursor-grab active:cursor-grabbing">
+                        <!-- Slides will be injected here by JavaScript -->
                     </div>
+                    <button id="prev-slide" class="slider-button left-2 hidden md:block"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
+                    <button id="next-slide" class="slider-button right-2 hidden md:block"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
                 </div>
+                 <p class="text-center text-gray-500 text-sm mt-2 md:hidden">Swipe for more &rarr;</p>
             </section>
 
             <!-- Booking Section -->
             <section id="booking" class="mb-20 scroll-mt-20 bg-white rounded-lg p-8 md:p-12 shadow-lg">
                 <h2 class="text-5xl font-bold mb-4 text-center">Book a Friendly Chat</h2>
                 <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">Just to be clear, I am not an advisor or psychologist. I am here to listen if you wanna share anything or you have any ideas. Think of this as a friendly meet, where we can discuss if you need a friend, if you are demotivated and you want me to give any suggestions.</p>
-                <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" class="max-w-xl mx-auto"><div class="mb-4"><input type="text" name="name" placeholder="Full Name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></div><div class="mb-4"><input type="email" name="email" placeholder="Email Address" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></div><div class="mb-6"><textarea name="message" placeholder="Purpose of Chat" rows="5" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></textarea></div><div class="text-center"><button type="submit" class="btn-primary">Request a Chat</button></div></form>
+                <form action="https://formspree.io/f/xovlveya" method="POST" class="max-w-xl mx-auto"><div class="mb-4"><input type="text" name="name" placeholder="Full Name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></div><div class="mb-4"><input type="email" name="email" placeholder="Email Address" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></div><div class="mb-6"><textarea name="message" placeholder="Purpose of Chat" rows="5" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></textarea></div><div class="text-center"><button type="submit" class="btn-primary">Request a Chat</button></div></form>
             </section>
         </div>
     </div>
 
     <!-- Recipe Detail Page (Hidden by default) -->
-    <div id="recipe-detail-page" class="hidden"><div class="container mx-auto px-6 py-12"><button id="back-to-main-recipe" class="mb-8 text-stone-800 hover:text-black font-semibold flex items-center">&larr; <span class="ml-2">Back to Main</span></button><h2 id="recipe-title" class="text-5xl md:text-6xl font-bold mb-8 text-center"></h2><div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"><div><img id="recipe-main-image" src="" alt="Main recipe photo" class="w-full rounded-lg shadow-xl mb-4"><div id="recipe-gallery" class="grid grid-cols-3 gap-4"></div></div><div class="prose max-w-none"><h3 class="text-3xl !mb-4">Ingredients</h3><ul id="recipe-ingredients" class="!mt-0"></ul><h3 class="text-3xl !mt-8 !mb-4">Instructions</h3><ol id="recipe-instructions" class="!mt-0"></ol></div></div></div></div>
+    <div id="recipe-detail-page" class="hidden"><div class="container mx-auto px-6 py-12"><button id="back-to-main-recipe" class="mb-8 text-stone-800 hover:text-black font-semibold flex items-center">&larr; <span class="ml-2">Back to Main</span></button><h2 id="recipe-title" class="text-5xl md:text-6xl font-bold mb-8 text-center"></h2><div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"><div><img id="recipe-main-image" src="" alt="Main recipe photo" class="w-full rounded-lg shadow-xl mb-4"></div><div class="prose max-w-none"><h3 class="text-3xl !mb-4">Ingredients</h3><ul id="recipe-ingredients" class="!mt-0"></ul><h3 class="text-3xl !mt-8 !mb-4">Instructions</h3><ol id="recipe-instructions" class="!mt-0"></ol></div></div></div></div>
     
     <!-- Debate Detail Page (Hidden by default) -->
     <div id="debate-detail-page" class="hidden"><div class="container mx-auto px-6 py-12"><button id="back-to-main-debate" class="mb-8 text-stone-800 hover:text-black font-semibold flex items-center">&larr; <span class="ml-2">Back to Main</span></button><h2 class="text-5xl md:text-6xl font-bold mb-8 text-center">My Journey to a Better Period</h2><div class="prose max-w-4xl mx-auto"><p>Let's talk about something we all go through, but often in silence: finding the right period products. My journey has been a long one, and I want to share it in case it helps you.</p><h3>The Pad Phase: Rashes and Worries</h3><p>Like many, I started with sanitary pads. While they're simple, my experience wasn't great. I found them uncomfortable and often got rashes. Beyond the physical discomfort, they were expensive month after month, and I constantly worried about stains and waste.</p><h3>The Tampon Upgrade: Better, But Not Perfect</h3><p>Moving on to tampons was a step up. They were definitely easier to carry and avoided the rash issue. But I still had occasional leaks and staining, which meant the worry wasn't completely gone. They were still a monthly expense and generated waste.</p><h3>The Menstrual Cup: A True Game-Changer</h3><p>Then I discovered the menstrual cup, and it has been an excellent choice. It's leak-proof, there are no rashes, and absolutely no drama. But my journey with it wasn't perfect from the start—it was all about the cleaning.</p><h4>The Sterilization Struggle</h4><p>At first, I sterilized my cup by boiling it in a pot on the stove. I was always terrified it was going to melt, and honestly, using kitchen silverware for this felt unhygienic and awkward. Then I tried a silicone sterilizing box for the microwave. That was better, but using the same microwave for my food right after felt strange and still a bit awkward.</p><div class="bg-rose-50 border-l-4 border-rose-200 p-4 rounded-r-lg my-6"><strong>The Perfect Solution:</strong> Finally, I found an electric sterilizing cup. This was the missing piece! You just add a little water, plug it in, and it's done. It's completely separate from my kitchen, it's discreet, and it's incredibly easy. It took away all the awkwardness and made using a menstrual cup the simple, stress-free experience it was meant to be. For me, it's the absolute best choice.</div><hr><h3 class="!mt-12">Join the Conversation</h3><p>What's your go-to and why? Share your experiences and tips with the community!</p><div id="comment-section" class="mt-8"></div><div class="mt-8"><textarea id="comment-input" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4" placeholder="Share your thoughts..."></textarea><div class="text-right mt-4"><button id="submit-comment-btn" class="btn-primary">Submit Comment</button></div></div></div></div></div>
@@ -226,14 +238,6 @@
             if (!recipe) return;
             document.getElementById('recipe-title').textContent = recipe.title;
             document.getElementById('recipe-main-image').src = recipe.images[0];
-            const gallery = document.getElementById('recipe-gallery');
-            gallery.innerHTML = '';
-            recipe.images.slice(1).forEach(imgUrl => {
-                const img = document.createElement('img');
-                img.src = imgUrl; img.alt = `View of ${recipe.title}`; img.className = 'w-full h-24 object-cover rounded-lg shadow-md cursor-pointer';
-                img.onclick = () => { document.getElementById('recipe-main-image').src = imgUrl; };
-                gallery.appendChild(img);
-            });
             const ingredientsList = document.getElementById('recipe-ingredients');
             ingredientsList.innerHTML = '';
             recipe.ingredients.forEach(item => { const li = document.createElement('li'); li.textContent = item; ingredientsList.appendChild(li); });
@@ -270,9 +274,14 @@
         const wellnessInput = document.getElementById('wellness-input');
         const styleResult = document.getElementById('style-result');
         const wellnessResult = document.getElementById('wellness-result');
-        const apiKey = "";
+        
+        const apiKey = "AIzaSyDqxykGMcKCcrMJjA2ktuWIlrY3piiTUIg";
 
         async function callGeminiAPI(prompt, resultElement, buttonElement) {
+            if (apiKey === "PASTE_YOUR_GOOGLE_AI_API_KEY_HERE" || !apiKey) {
+                 resultElement.innerHTML = `<div class="ai-result" style="border-color: #ef4444;">Please add a valid API key to the code to use this feature.</div>`;
+                 return;
+            }
             resultElement.innerHTML = '<div class="ai-result">Generating...</div>';
             buttonElement.disabled = true;
             try {
@@ -384,7 +393,7 @@
 
         galleryData.forEach(item => {
             const slide = document.createElement('div');
-            slide.className = 'w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2';
+            slide.className = 'w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 snap-center';
             slide.innerHTML = `
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
                     <img src="${item.img}" alt="${item.desc}" class="w-full h-80 object-cover pointer-events-none group-hover:scale-105 transition-transform duration-500">
@@ -393,87 +402,42 @@
             `;
             sliderTrack.appendChild(slide);
         });
-
-        let currentIndex = 0;
-        let isDragging = false;
-        let startPos = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
-        let animationID;
-
-        function getSlidesToShow() {
-            if (window.innerWidth >= 1024) return 3;
-            if (window.innerWidth >= 768) return 2;
-            return 1;
-        }
-
-        function setSliderPosition() {
-            sliderTrack.style.transform = `translateX(${currentTranslate}px)`;
-        }
         
-        function getPositionX(e) {
-            return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-        }
-
-        function startDrag(e) {
-            isDragging = true;
-            startPos = getPositionX(e);
-            sliderTrack.style.transition = 'none';
-            animationID = requestAnimationFrame(animation);
-        }
-
-        function dragging(e) {
-            if (isDragging) {
-                const currentPosition = getPositionX(e);
-                currentTranslate = prevTranslate + currentPosition - startPos;
-            }
-        }
+        const prevButton = document.getElementById('prev-slide');
+        const nextButton = document.getElementById('next-slide');
         
-        function animation() {
-            setSliderPosition();
-            if(isDragging) requestAnimationFrame(animation);
-        }
+        nextButton.addEventListener('click', () => {
+            sliderContainer.scrollBy({ left: sliderContainer.clientWidth, behavior: 'smooth' });
+        });
 
-        function endDrag() {
-            if (!isDragging) return;
-            isDragging = false;
-            cancelAnimationFrame(animationID);
-            
-            const movedBy = currentTranslate - prevTranslate;
-            const totalSlides = galleryData.length;
-            const slidesToShow = getSlidesToShow();
-            const maxIndex = Math.ceil(totalSlides / slidesToShow) - 1;
+        prevButton.addEventListener('click', () => {
+            sliderContainer.scrollBy({ left: -sliderContainer.clientWidth, behavior: 'smooth' });
+        });
 
-            if (movedBy < -100 && currentIndex < maxIndex) {
-                currentIndex++;
-            }
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-            if (movedBy > 100 && currentIndex > 0) {
-                currentIndex--;
-            }
-
-            const slideWidth = sliderContainer.clientWidth / slidesToShow;
-            currentTranslate = currentIndex * -slideWidth * slidesToShow;
-            prevTranslate = currentTranslate;
-            
-            sliderTrack.style.transition = 'transform 0.5s ease-in-out';
-            setSliderPosition();
-        }
-        
-        sliderContainer.addEventListener('mousedown', startDrag);
-        sliderContainer.addEventListener('touchstart', startDrag, { passive: true });
-        sliderContainer.addEventListener('mouseup', endDrag);
-        sliderContainer.addEventListener('touchend', endDrag);
-        sliderContainer.addEventListener('mouseleave', endDrag);
-        sliderContainer.addEventListener('mousemove', dragging);
-        sliderContainer.addEventListener('touchmove', dragging, { passive: true });
-
-        window.addEventListener('resize', () => {
-             currentIndex = 0;
-             sliderTrack.style.transition = 'none';
-             prevTranslate = 0;
-             currentTranslate = 0;
-             setSliderPosition();
+        sliderContainer.addEventListener('mousedown', (e) => {
+          isDown = true;
+          sliderContainer.classList.add('active:cursor-grabbing');
+          startX = e.pageX - sliderContainer.offsetLeft;
+          scrollLeft = sliderContainer.scrollLeft;
+        });
+        sliderContainer.addEventListener('mouseleave', () => {
+          isDown = false;
+          sliderContainer.classList.remove('active:cursor-grabbing');
+        });
+        sliderContainer.addEventListener('mouseup', () => {
+          isDown = false;
+          sliderContainer.classList.remove('active:cursor-grabbing');
+        });
+        sliderContainer.addEventListener('mousemove', (e) => {
+          if(!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - sliderContainer.offsetLeft;
+          const walk = (x - startX) * 2; 
+          sliderContainer.scrollLeft = scrollLeft - walk;
         });
 
     </script>
